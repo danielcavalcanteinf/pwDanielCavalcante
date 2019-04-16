@@ -1,0 +1,21 @@
+body{
+    background-color: #082767;
+    
+    /*background-image: url("churras.jpg");*/
+
+    }
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: black;
+   }
+
+p {
+    color: rgb(0, 90, 63);
+    font-size: 35px;
+}
+
+form {
+    text-align: center;
+}
