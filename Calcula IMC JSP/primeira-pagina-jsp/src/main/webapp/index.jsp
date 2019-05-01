@@ -24,8 +24,7 @@
             <label for="centimetros">Centímetros:</label>
             <input type="text" name="centimetros" value="" class="form-control" />
             
-            
-            <p></p><input type="submit">
+            <p></p><button type="submit" class="btn btn-warning" onclick="calcularIMC();">Calcular</button>
             
             <%
             String pesoStr = request.getParameter("peso");
