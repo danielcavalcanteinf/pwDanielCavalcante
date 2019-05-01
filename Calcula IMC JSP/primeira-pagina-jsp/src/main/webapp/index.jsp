@@ -34,11 +34,11 @@
             
         
             if (pesoStr != null && metrosStr != null && centimetrosStr != null) {
-                double peso = Double.parseDouble(pesoStr);
+                float peso = Float.parseFloat(pesoStr);
                 int metros = Integer.parseInt(metrosStr);
                 int centimetros = Integer.parseInt(centimetrosStr);
-                double altura = (((metros * 100) + centimetros)/100);
-                double imc = (peso / (altura * altura));
+                float altura = (((metros * 100) + centimetros)/100);
+                float imc = (peso)/(altura*altura);
         
         
             %>
