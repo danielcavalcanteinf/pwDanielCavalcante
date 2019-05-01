@@ -10,7 +10,7 @@
   <body>
       
     <h1>Cálculo de IMC</h1>
-    <form action ="calculo-imc.jsp" class="container" id="formulario">
+    <form class="container" id="formulario">
         <div class="col-md-5">
          
             <legend>Verifique seu IMC preenchendo as informações abaixo</legend>
@@ -23,12 +23,65 @@
             <label for="centimetros">Centímetros:</label>
             <input type="text" name="centimetros" value="" class="form-control" />
             
-            <label for="imc">IMC:</label>
-            <input type="text" name="imc" class="form-control" disabled="" />
             
             <p></p><input type="submit">
             
-          
+            <%
+            String pesoStr = request.getParameter("peso");
+            String metrosStr = request.getParameter("metros");
+            String centimetrosStr = request.getParameter("centimetros");
+            String imcStr = request.getParameter("imc");
+            
+        
+            if (pesoStr != null && metrosStr != null && centimetrosStr != null) {
+                double peso = Double.parseDouble(pesoStr);
+                int metros = Integer.parseInt(metrosStr);
+                int centimetros = Integer.parseInt(centimetrosStr);
+                double altura = (((metros * 100) + centimetros)/100);
+                double imc = (peso / (altura * altura));
+        
+        
+            %>
+            <%
+            if (imc < 17) {
+                
+                out.print("Muito abaixo do peso");
+                        
+            }
+            
+            else if (imc >= 17 && imc <= 18.4){
+                
+                out.print("Abaixo do peso");
+                
+            }
+            else if (imc > 18.4 && imc <= 24.9){
+                
+                out.print("Peso normal");
+                
+            }
+            else if (imc > 24.9 && imc <= 29.9){
+                
+                out.print("Acima do peso");
+                
+            }
+            else if (imc > 29.9 && imc <= 34.9){
+                
+                out.print("Obesidade Grau 1");
+                
+            }
+            else if (imc > 34.9 && imc <= 40){
+                
+                out.print("Obesidade Grau 2");
+                
+            }
+            else if (imc > 40) {
+                
+                out.print("Obesidade Grau 3");
+                
+            }
+            
+        }
+        %>
         </div>
       </form>
       
